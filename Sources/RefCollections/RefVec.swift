@@ -2,13 +2,13 @@
 public final class RefVec<Element> : ExpressibleByArrayLiteral {
     var inner: ContiguousArray<Element>
 
-
     public init() {
         self.inner = []
     }
 
     public init(arrayLiteral elements: Element...) {
-        //        self.inner = .init(arrayLiteral: elements)
+//                self.inner = .init(arrayLiteral: elements)
+//        self.inner = ContiguousArray(arrayLiteral: elements)
         fatalError()
     }
 }
