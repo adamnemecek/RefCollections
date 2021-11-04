@@ -66,4 +66,10 @@ extension RefVec: RangeReplaceableCollection {
     }
 }
 
+extension RefVec where Element : Comparable {
+    public func sort() {
+        self.inner.sort()
+    }
+}
+
 
