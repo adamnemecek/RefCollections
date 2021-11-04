@@ -38,6 +38,10 @@ extension RefVec : MutableCollection {
     public func sort(by areInIncreasingOrder: (Element, Element) throws -> Bool) rethrows {
         try self.inner.sort(by: areInIncreasingOrder)
     }
+
+    public func removeAll() {
+        self.inner.removeAll()
+    }
 }
 
 
