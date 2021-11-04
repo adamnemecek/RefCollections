@@ -9,6 +9,11 @@ public final class RefVec<Element> : ExpressibleByArrayLiteral {
     public init(arrayLiteral elements: Element...) {
 //                self.inner = .init(arrayLiteral: elements)
 //        self.inner = ContiguousArray(arrayLiteral: elements)
+        self.inner = []
+        self.inner.append(contentsOf: elements)
+    }
+
+    public init(from decoder: Decoder) throws {
         fatalError()
     }
 }
@@ -72,4 +77,15 @@ extension RefVec where Element : Comparable {
     }
 }
 
+extension RefVec : RandomAccessCollection {
+
+}
+
+extension RefVec : Codable {
+
+
+    public func encode(to encoder: Encoder) throws {
+        fatalError()
+    }
+}
 
