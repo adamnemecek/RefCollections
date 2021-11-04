@@ -38,12 +38,7 @@ extension RefVec : MutableCollection {
     public func sort(by areInIncreasingOrder: (Element, Element) throws -> Bool) rethrows {
         try self.inner.sort(by: areInIncreasingOrder)
     }
-
-    public func removeAll() {
-        self.inner.removeAll()
-    }
 }
-
 
 
 extension RefVec {
@@ -56,6 +51,18 @@ extension RefVec {
 extension RefVec: RangeReplaceableCollection {
     public func replaceSubrange<C>(_ subrange: Range<Int>, with newElements: C) where C : Collection, Element == C.Element {
         self.inner.replaceSubrange(subrange, with: newElements)
+    }
+
+    public func append(_ newElement: Element) {
+        self.inner.append(newElement)
+    }
+
+    public func removeAll(keepingCapacity keepCapacity: Bool) {
+        self.inner.removeAll(keepingCapacity: keepCapacity)
+    }
+
+    public func removeAll() {
+        self.inner.removeAll()
     }
 }
 
