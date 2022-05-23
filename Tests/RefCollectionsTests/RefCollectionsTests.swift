@@ -7,6 +7,6 @@ final class RefCollectionsTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
 //        XCTAssertEqual(RefCollections().text, "Hello, World!")
-        let a: RefVec = [1,2,3,4]
+        let a: RefArray = [1,2,3,4]
     }
 }
